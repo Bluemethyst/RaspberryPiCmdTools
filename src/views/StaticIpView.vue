@@ -70,6 +70,7 @@
             <div v-if="command" class="output">
                 <h2>Generated Command:</h2>
                 <code>{{ command }}</code>
+                <button @click="copyToClipboard" class="btn">Copy to Clipboard</button>
             </div>
         </main>
     </div>
@@ -91,20 +92,20 @@ export default {
     methods: {
         generateCommand() {
             if (this.ipMethod === 'manual') {
-                this.command = `nmcli con mod "${this.connectionName}" \
-  ipv4.addresses "${this.hostIp}" \
-  ipv4.gateway "${this.gateway}" \
-  ipv4.dns "${this.dns}" \
-  ipv4.dns-search "${this.domainName}" \
-  ipv4.method "${this.ipMethod}"`
+                this.command = `nmcli con mod "${this.connectionName}" ipv4.addresses "${this.hostIp}" ipv4.gateway "${this.gateway}" ipv4.dns "${this.dns}" ipv4.dns-search "${this.domainName}" ipv4.method "${this.ipMethod}"`
             } else {
-                this.command = `nmcli con mod "${this.connectionName}" \
-  ipv4.addresses "" \
-  ipv4.gateway "" \
-  ipv4.dns "" \
-  ipv4.dns-search "" \
-  ipv4.method "${this.ipMethod}"`
+                this.command = `nmcli con mod "${this.connectionName}" ipv4.addresses "" ipv4.gateway "" ipv4.dns "" ipv4.dns-search "" ipv4.method "${this.ipMethod}"`
             }
+        },
+        copyToClipboard() {
+            navigator.clipboard.writeText(this.command).then(
+                () => {
+                    alert('Command copied to clipboard!')
+                },
+                (err) => {
+                    console.error('Could not copy text: ', err)
+                }
+            )
         }
     }
 }
