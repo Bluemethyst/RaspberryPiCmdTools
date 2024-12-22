@@ -2,6 +2,8 @@
 
 A collection of generators for creating commands for Raspberry Pi OS
 
+static ip gen thanks to https://askubuntu.com/a/936249/1751784
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
