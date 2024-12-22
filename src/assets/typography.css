@@ -1,0 +1,23 @@
+h1,
+h2 {
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+code {
+    display: block;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #333;
+    white-space: pre-wrap;
+}
