@@ -3,14 +3,16 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    color: var(--text-color);
 }
 
 .header {
     text-align: center;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .main {
